@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>i am P - html thing</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        body { background-color: #eef; margin: 0; padding: 10px; }
+        .outer-wrapper { border: 5px solid black; padding: 5px; }
+        .main-content { display: flex; flex-direction: column; gap: 10px; }
+        .section-container { background: white; border: 2px solid #555; padding: 20px; }
+        .nested-box { border: 1px dashed red; padding: 10px; }
+        .green-class { color: green; font-family: cursive; }
+        #unique-p { background-color: yellow; font-size: 20px; }
+        table { width: 50%; }
+    </style>
+</head>
+<body>
+
+<div class="outer-wrapper">
+    <header id="top-header">
+        <h1>i am P and this is html</h1>
+        <p>i am P. this is my intro and home page. basic stuff.</p>
+    </header>
+
+    <div class="main-content">
+        <section class="section-container">
+            <div class="nested-box">
+                <h2>heads and things</h2>
+                <p title="this is an attribute">i am P. i wrote this in an editor. it is basic html.</p>
+                <p><b>wow that underscored</b> thing: <u>underscored text</u></p>
+                <p><i>formatting is cool</i> and <strong>bold is strong</strong></p>
+                <blockquote>"this is a quote from me" - i am P</blockquote>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <div class="nested-box" style="background-color: lightcyan;">
+                <h3>colors and css</h3>
+                <p style="color: blue;">this text is blue style. wow that underscored</p>
+                <div class="green-class">i am P. this uses a class.</div>
+                <p id="unique-p">this uses an id. it is yellow.</p>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <div class="flex-row" style="display: flex; gap: 20px;">
+                <div class="left-side">
+                    <h4>links and pics</h4>
+                    <a href="https://google.com">click this link</a>
+                    <br>
+                    <img src="https://www.w3schools.com/html/img_girl.jpg" alt="girl" width="50">
+                </div>
+                <div class="right-side">
+                    <h4>lists</h4>
+                    <ul>
+                        <li>i am P</li>
+                        <li>wow that underscored</li>
+                        <li>
+                            <ol>
+                                <li>nested list 1</li>
+                                <li>nested list 2</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <h4>tables and blocks</h4>
+            <div style="border: 1px solid black;">
+                <p>this is a div block. <span>this is inline span.</span> i am P.</p>
+                <table border="1">
+                    <tr>
+                        <th>head 1</th>
+                        <th>head 2</th>
+                    </tr>
+                    <tr>
+                        <td>i am P</td>
+                        <td>wow that underscored</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <footer style="text-align: center; margin-top: 20px;">
+        <p>the end. i am P. bye.</p>
+    </footer>
+</div>
+
+</body>
+</html>

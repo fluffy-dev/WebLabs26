@@ -1,0 +1,241 @@
+:root {
+    --color-bg: #ffffff;
+    --color-text-main: #1f2328;
+    --color-text-muted: #636c76;
+    --color-border: #d0d7de;
+    --color-primary: #1f2328;
+    --color-blue: #0969da;
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-text-main);
+    background-color: var(--color-bg);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+    padding: 16px 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-text-main);
+    margin-right: 16px;
+}
+
+.search-box {
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 4px 12px;
+    color: var(--color-text-muted);
+    font-size: 13px;
+    width: 240px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-outline {
+    border: 1px solid var(--color-border);
+    padding: 5px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--color-text-main);
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 0 60px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 16px;
+    color: var(--color-text-muted);
+    margin-bottom: 32px;
+}
+
+.btn-primary-large {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding-bottom: 100px;
+}
+
+.card {
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 10px 50px rgba(140, 149, 159, 1);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 0px 0px rgba(140, 149, 159, 1);
+}
+
+.card.featured {
+    border: 2px solid var(--color-blue);
+    transform: scale(1.02);
+}
+
+.badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-blue);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.card-header h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    min-height: 40px;
+    margin-bottom: 24px;
+}
+
+.price {
+    margin-bottom: 24px;
+}
+
+.currency {
+    font-size: 20px;
+    vertical-align: top;
+    position: relative;
+    top: 8px;
+}
+
+.amount {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.period {
+    display: block;
+    font-size: 14px;
+    color: var(--color-text-muted);
+}
+
+.btn-primary, .btn-secondary {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: white;
+    border: 1px solid var(--color-primary);
+}
+
+.btn-secondary {
+    background: white;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-main);
+}
+
+
+.card-body {
+    margin-top: 24px;
+}
+
+.includes {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    font-size: 13px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.icon {
+    color: var(--color-text-muted);
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.trial-label {
+    font-size: 12px;
+    border: 1px solid var(--color-border);
+    padding: 2px 8px;
+    border-radius: 12px;
+    color: var(--color-text-muted);
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+}

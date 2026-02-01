@@ -1,0 +1,257 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #1c1e21;
+    -webkit-font-smoothing: antialiased;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    padding-top: 72px;
+    padding-bottom: 112px;
+}
+
+.content-container {
+    display: flex;
+    width: 100%;
+    max-width: 980px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+
+.left-column {
+    flex: 1;
+    max-width: 500px;
+    padding-bottom: 20px;
+}
+
+.fb-logo {
+    height: 106px;
+    margin: -28px;
+}
+
+.tagline {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 32px;
+    padding-top: 10px;
+}
+
+
+.right-column {
+    width: 396px;
+    flex-shrink: 0;
+}
+
+.login-card {
+    background: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+}
+
+.input-field {
+    width: 100%;
+    height: 52px;
+    padding: 14px 16px;
+    font-size: 17px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-field:focus {
+    border-color: #1877f2;
+    box-shadow: 0 0 0 2px #e7f3ff;
+}
+
+.login-btn {
+    width: 100%;
+    background-color: #0866ff;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    height: 48px;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.login-btn:hover {
+    background-color: #1471f6;
+}
+
+.forgot-link {
+    display: block;
+    text-align: center;
+    margin: 16px 0;
+    color: #0866ff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+.divider {
+    border-bottom: 1px solid #dadde1;
+    margin-bottom: 20px;
+}
+
+.create-account-zone {
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+}
+
+.create-btn {
+    background-color: #42b72a;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 0 16px;
+    height: 48px;
+    cursor: pointer;
+}
+
+.create-btn:hover {
+    background-color: #36a420;
+}
+
+.create-page-text {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 28px;
+}
+
+.create-page-text a {
+    text-decoration: none;
+    color: #1c1e21;
+}
+
+
+.footer {
+    background-color: #fff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 20px;
+    color: #8a8d91;
+    font-size: 12px;
+}
+
+.lang-list, .links-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lang-list li, .links-list li {
+    margin-right: 12px;
+    margin-bottom: 8px;
+}
+
+.footer a {
+    color: #8a8d91;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-line {
+    border-top: 1px solid #dddfe2;
+    margin: 10px 0;
+}
+
+.plus-btn {
+    background-color: #f5f6f7;
+    border: 1px solid #dddfe2;
+    padding: 0 8px;
+    color: #4b4f56;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 11px;
+}
+
+
+@media (max-width: 900px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-top: 0;
+    }
+
+    .left-column {
+        max-width: 400px;
+        margin-bottom: 0;
+    }
+
+    .fb-logo {
+        height: 80px;
+        margin: 0 auto;
+    }
+
+    .tagline {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .right-column {
+        width: 100%;
+        max-width: 396px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding-top: 40px;
+    }
+    
+    .tagline {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .login-card {
+        box-shadow: none;
+        border: 1px solid #dddfe2;
+    }
+}

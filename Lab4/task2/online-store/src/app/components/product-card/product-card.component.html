@@ -1,0 +1,55 @@
+<div class="product-card">
+  <div class="image-gallery">
+    <div class="main-image-container">
+      <button
+        class="nav-btn prev"
+        (click)="prevImage()"
+        *ngIf="product.images.length > 1"
+      >
+        ‹
+      </button>
+      <img
+        [src]="product.images[currentImageIndex] || product.image"
+        [alt]="product.name"
+        class="main-image"
+      />
+      <button
+        class="nav-btn next"
+        (click)="nextImage()"
+        *ngIf="product.images.length > 1"
+      >
+        ›
+      </button>
+    </div>
+    <div class="thumbnails" *ngIf="product.images.length > 1">
+      <img
+        *ngFor="let img of product.images; let i = index"
+        [src]="img"
+        [class.active]="i === currentImageIndex"
+        (click)="selectImage(i)"
+        class="thumbnail"
+      />
+    </div>
+  </div>
+
+  <div class="product-info">
+    <h3 class="product-name">
+      <a [href]="product.link" target="_blank">{{ product.name }}</a>
+    </h3>
+    <p class="product-description">{{ product.description }}</p>
+
+    <div class="rating-price">
+      <div class="rating"><span class="star">★</span> {{ product.rating }}</div>
+      <div class="price">{{ product.price | number: "1.0-0" }} ₸</div>
+    </div>
+
+    <div class="actions">
+      <button class="share-btn whatsapp" (click)="shareToWhatsApp()">
+        Share on WhatsApp
+      </button>
+      <button class="share-btn telegram" (click)="shareToTelegram()">
+        Share on Telegram
+      </button>
+    </div>
+  </div>
+</div>

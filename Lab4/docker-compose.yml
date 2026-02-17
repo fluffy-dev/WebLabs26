@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  task1:
+    build:
+      context: ./task1
+      dockerfile: ../Dockerfile
+    container_name: angular-task1
+    ports:
+      - "4201:4200"
+    volumes:
+      - ./task1:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: unless-stopped
+
+  task2:
+    build:
+      context: ./task2/online-store
+      dockerfile: ../../Dockerfile
+    container_name: angular-task2
+    ports:
+      - "4202:4200"
+    volumes:
+      - ./task2/online-store:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: unless-stopped

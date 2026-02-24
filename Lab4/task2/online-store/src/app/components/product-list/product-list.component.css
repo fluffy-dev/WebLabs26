@@ -1,15 +1,183 @@
+/* === List Header === */
+.list-header {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 32px 0;
+}
+
+.list-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.list-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #f0f0f5;
+}
+
+.list-count {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #6b6b80;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* === Sort Toolbar === */
+.filters-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.sort-control {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-icon {
+  color: #6b6b80;
+  flex-shrink: 0;
+}
+
+.sort-control select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 10px 36px 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  background: rgba(255, 255, 255, 0.04);
+  color: #c0c0d0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b6b80' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+.sort-control select:hover {
+  border-color: rgba(167, 139, 250, 0.3);
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.sort-control select:focus {
+  outline: none;
+  border-color: rgba(167, 139, 250, 0.5);
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.12);
+}
+
+.sort-control select option {
+  background: #1e1e2a;
+  color: #c0c0d0;
+}
+
+/* === Rating Filter === */
+.rating-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b6b80;
+  margin-right: 4px;
+}
+
+.rating-btn {
+  padding: 7px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #8a8a9e;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.rating-btn:hover {
+  border-color: rgba(245, 197, 66, 0.3);
+  background: rgba(245, 197, 66, 0.08);
+  color: #f5c542;
+}
+
+.rating-btn.active {
+  border-color: rgba(245, 197, 66, 0.4);
+  background: rgba(245, 197, 66, 0.12);
+  color: #f5c542;
+  box-shadow: 0 0 12px rgba(245, 197, 66, 0.1);
+}
+
+/* === Product Grid === */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
   gap: 24px;
-  padding: 24px;
-  max-width: 1200px;
+  padding: 28px 32px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
-@media (max-width: 600px) {
+/* === Staggered Card Entrance Animation === */
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-animate {
+  animation: cardFadeIn 0.5s ease-out both;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .list-header {
+    padding: 24px 16px 0;
+  }
+
+  .list-title {
+    font-size: 1.25rem;
+  }
+
+  .filters-row {
+    gap: 12px;
+  }
+
+  .rating-filter {
+    gap: 6px;
+  }
+
+  .rating-btn {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+
   .product-grid {
     grid-template-columns: 1fr;
-    padding: 16px;
+    padding: 20px 16px;
+    gap: 20px;
   }
 }

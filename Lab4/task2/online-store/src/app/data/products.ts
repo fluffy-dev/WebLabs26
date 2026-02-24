@@ -57,11 +57,9 @@ export const products: Product[] = [
     price: 300000,
     rating: 5.0,
     image:
-      'https://resources.cdn-kaspi.kz/img/m/p/h5d/h54/84534570024990.jpg?format=gallery-medium',
+      'https://habrastorage.org/r/w1560/getpro/geektimes/post_images/744/50c/e23/74450ce23e81cefa23023cf174447f42.jpg',
     images: [
-      'https://resources.cdn-kaspi.kz/img/m/p/h5d/h54/84534570024990.jpg?format=gallery-medium',
-      'https://resources.cdn-kaspi.kz/img/m/p/hcf/h16/84534570090526.jpg?format=gallery-medium',
-      'https://resources.cdn-kaspi.kz/img/m/p/h83/h8c/84534570156062.jpg?format=gallery-medium',
+      'https://habrastorage.org/r/w1560/getpro/geektimes/post_images/744/50c/e23/74450ce23e81cefa23023cf174447f42.jpg',
     ],
     link: 'https://kaspi.kz/shop/p/sony-playstation-5-slim-114696098/?c=750000000',
   },

@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     checkbox.className = "todo-checkbox";
     checkbox.checked = isDone;
     checkbox.addEventListener("change", () => {
-     li.classList.toggle("done");
+      li.classList.toggle("done");
     });
 
     // Task Text

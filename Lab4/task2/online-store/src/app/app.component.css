@@ -1,26 +1,79 @@
+.app-container {
+  min-height: 100vh;
+  background: #0e0e12;
+}
+
 .app-header {
-  background-color: #f14635; /* Kaspi red-ish color */
-  color: white;
-  padding: 16px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
+  background: linear-gradient(135deg, #16161d 0%, #1e1e2a 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 18px 0;
   position: sticky;
   top: 0;
   z-index: 100;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .header-content {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  font-size: 1.6rem;
+  color: #a78bfa;
+  filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.4));
 }
 
 h1 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff 0%, #a0a0b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(167, 139, 250, 0.12);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.2);
 }
 
 main {
-  background-color: #f0f2f5;
-  min-height: calc(100vh - 64px);
+  background: #0e0e12;
+  min-height: calc(100vh - 70px);
+  padding-bottom: 48px;
+}
+
+@media (max-width: 600px) {
+  .header-content {
+    padding: 0 16px;
+  }
+
+  h1 {
+    font-size: 1.1rem;
+  }
+
+  .header-badge {
+    display: none;
+  }
 }

@@ -2,20 +2,12 @@
   <div class="gallery">
     <button class="gallery-arrow gallery-arrow--left" (click)="prevImage()">&#8249;</button>
     <a [href]="product.link" target="_blank" rel="noopener">
-      <img
-        class="gallery-image"
-        [src]="product.images[selectedImage]"
-        [alt]="product.name"
-      />
+      <img class="gallery-image" [src]="product.images[selectedImage]" [alt]="product.name" />
     </a>
     <button class="gallery-arrow gallery-arrow--right" (click)="nextImage()">&#8250;</button>
     <div class="gallery-dots">
       @for (img of product.images; track $index) {
-        <span
-          class="dot"
-          [class.dot--active]="$index === selectedImage"
-          (click)="selectImage($index)"
-        ></span>
+      <span class="dot" [class.dot--active]="$index === selectedImage" (click)="selectImage($index)"></span>
       }
     </div>
   </div>
@@ -27,9 +19,9 @@
 
     <div class="card-rating">
       @for (star of stars; track star) {
-        <span class="star" [class.star--filled]="star <= product.rating"
-              [class.star--half]="star > product.rating && star - 1 < product.rating">
-        </span>
+      <span class="star" [class.star--filled]="star <= product.rating"
+        [class.star--half]="star > product.rating && star - 1 < product.rating">
+      </span>
       }
       <span class="rating-reviews">({{ product.rating }})</span>
     </div>
@@ -48,15 +40,25 @@
 
     <div class="card-actions">
       <a class="btn btn-buy" [href]="product.link" target="_blank" rel="noopener">
-        Buy
+        Buy Now
       </a>
       <div class="share-wrapper">
-        <button class="btn btn-share" (click)="toggleShare()">Share</button>
+        <button class="btn btn-share" (click)="toggleShare()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+          Share
+        </button>
         @if (shareOpen) {
-          <div class="share-dropdown">
-            <button class="share-option" (click)="share('whatsapp')">WhatsApp</button>
-            <button class="share-option" (click)="share('telegram')">Telegram</button>
-          </div>
+        <div class="share-dropdown">
+          <button class="share-option" (click)="share('whatsapp')">WhatsApp</button>
+          <button class="share-option" (click)="share('telegram')">Telegram</button>
+        </div>
         }
       </div>
     </div>

@@ -18,6 +18,9 @@ export class App {
   searchQuery: string = '';
   selectedCategory: number = -1;
 
+  deletedProduct: { product: Product, index: number } | null = null;
+  undoTimeout: any;
+
   get filteredProducts(): Product[] {
     const query = this.searchQuery.toLowerCase();
     return this.products.filter(product => {
@@ -28,7 +31,31 @@ export class App {
   }
 
   onProductRemove(productId: number): void {
-    this.products = this.products.filter(p => p.id !== productId);
+    const index = this.products.findIndex(p => p.id === productId);
+    if (index !== -1) {
+      this.deletedProduct = { product: this.products[index], index };
+      this.products = this.products.filter(p => p.id !== productId);
+
+      if (this.undoTimeout) {
+        clearTimeout(this.undoTimeout);
+      }
+      this.undoTimeout = setTimeout(() => {
+        this.deletedProduct = null;
+      }, 6000);
+    }
+  }
+
+  undoRemove(): void {
+    if (this.deletedProduct) {
+      const { product, index } = this.deletedProduct;
+      const updatedProducts = [...this.products];
+      updatedProducts.splice(index, 0, product);
+      this.products = updatedProducts;
+      this.deletedProduct = null;
+      if (this.undoTimeout) {
+        clearTimeout(this.undoTimeout);
+      }
+    }
   }
 }
 

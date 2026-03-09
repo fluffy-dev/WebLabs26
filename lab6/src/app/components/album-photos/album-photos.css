@@ -1,51 +1,74 @@
 .container {
-    padding: 20px;
+    padding: 20px 0;
     max-width: 1000px;
     margin: 0 auto;
+    animation: fadeIn 0.5s ease-out;
 }
 
 .back-btn {
     background: none;
     border: none;
-    color: #007bff;
-    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
     cursor: pointer;
-    margin-bottom: 20px;
-    padding: 0;
+    margin-bottom: 24px;
+    padding: 6px 0;
     display: inline-flex;
     align-items: center;
+    gap: 6px;
+    transition: color var(--transition);
+    font-family: inherit;
 }
 
 .back-btn:hover {
-    text-decoration: underline;
+    color: var(--text-primary);
 }
 
 h2 {
     margin-top: 0;
-    margin-bottom: 30px;
-    color: #333;
+    margin-bottom: 28px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
 }
 
 .loading {
-    font-size: 1.2rem;
-    color: #666;
+    font-size: 1rem;
+    color: var(--text-muted);
     text-align: center;
-    padding: 40px;
+    padding: 60px;
+    animation: pulse 1.5s ease-in-out infinite;
 }
 
 .photos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
 }
 
 .photo-card {
-    background-color: white;
-    border-radius: 12px;
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-md);
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border);
     display: flex;
     flex-direction: column;
+    transition: all var(--transition);
+}
+
+.photo-card:hover {
+    border-color: var(--text-muted);
+    box-shadow: var(--shadow-card);
+    transform: translateY(-2px);
+}
+
+.photo-card:hover .thumbnail {
+    transform: scale(1.05);
+}
+
+.thumb-wrapper {
+    overflow: hidden;
 }
 
 .thumbnail {
@@ -53,13 +76,15 @@ h2 {
     aspect-ratio: 1;
     object-fit: cover;
     display: block;
+    transition: transform 0.4s ease;
 }
 
 .photo-title {
     padding: 12px;
     margin: 0;
-    font-size: 0.9rem;
-    color: #555;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
     text-align: center;
-    border-top: 1px solid #f0f0f0;
+    border-top: 1px solid var(--border);
+    line-height: 1.4;
 }

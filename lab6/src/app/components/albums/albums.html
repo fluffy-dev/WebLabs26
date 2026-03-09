@@ -1,5 +1,17 @@
 <div class="container">
     <h1>Albums</h1>
+    <div class="toolbar">
+        <p class="count">{{ albums.length }} albums available</p>
+        <button class="sort-btn" (click)="toggleSort()">
+            @if (sortOrder === 'asc') {
+            A → Z ↑
+            } @else if (sortOrder === 'desc') {
+            Z → A ↓
+            } @else {
+            Sort
+            }
+        </button>
+    </div>
 
     @if (loading) {
     <div class="loading">Loading albums...</div>
@@ -8,7 +20,7 @@
         @for (album of albums; track album.id) {
         <div class="album-card">
             <div class="album-content" [routerLink]="['/albums', album.id]">
-                <h3>{{ album.id }}. {{ album.title }}</h3>
+                <h3><span class="album-id">#{{ album.id }}</span>{{ album.title }}</h3>
             </div>
             <button class="delete-btn" (click)="deleteAlbum(album.id)">Delete</button>
         </div>

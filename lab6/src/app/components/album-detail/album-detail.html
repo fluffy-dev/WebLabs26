@@ -18,9 +18,12 @@
         <div class="edit-group">
             <label>Title:</label>
             <div class="input-with-btn">
-                <input type="text" [(ngModel)]="newTitle" class="title-input">
+                <input type="text" [(ngModel)]="newTitle" (input)="onTitleInput($event)" class="title-input">
                 <button class="save-btn" (click)="saveTitle()">Save</button>
             </div>
+            @if (saveMessage) {
+            <div class="save-message">{{ saveMessage }}</div>
+            }
         </div>
 
         <div class="actions">

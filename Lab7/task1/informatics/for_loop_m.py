@@ -1,0 +1,5 @@
+base, exp = map(int, input().split())
+result = 1
+for _ in range(exp):
+    result *= base
+print(result)

@@ -1,38 +1,76 @@
 .container {
-    padding: 20px;
+    padding: 20px 0;
+    animation: fadeIn 0.5s ease-out;
 }
 
 h1 {
-    margin-bottom: 30px;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+    color: var(--text-primary);
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.count {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.sort-btn {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    padding: 7px 16px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    font-family: inherit;
+    transition: all var(--transition);
+}
+
+.sort-btn:hover {
+    border-color: var(--text-muted);
+    box-shadow: var(--shadow-card);
 }
 
 .loading {
-    font-size: 1.2rem;
-    color: #666;
+    font-size: 1rem;
+    color: var(--text-muted);
     text-align: center;
-    padding: 40px;
+    padding: 60px 20px;
+    animation: pulse 1.5s ease-in-out infinite;
 }
 
 .albums-grid {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
 }
 
 .album-card {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: var(--bg-secondary);
+    padding: 18px 24px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    transition: all var(--transition);
 }
 
 .album-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-color: var(--text-muted);
+    box-shadow: var(--shadow-card);
+    transform: translateY(-1px);
 }
 
 .album-content {
@@ -43,20 +81,33 @@ h1 {
 .album-content h3 {
     margin: 0;
     font-weight: 500;
-    color: #333;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.album-id {
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-right: 8px;
+    font-size: 0.85rem;
 }
 
 .delete-btn {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
+    background-color: transparent;
+    color: var(--danger);
+    border: 1px solid var(--danger);
+    padding: 7px 16px;
+    border-radius: var(--radius-sm);
     cursor: pointer;
     margin-left: 20px;
-    transition: background-color 0.2s;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all var(--transition);
+    font-family: inherit;
 }
 
 .delete-btn:hover {
-    background-color: #c82333;
+    background-color: var(--danger);
+    color: var(--text-primary);
 }

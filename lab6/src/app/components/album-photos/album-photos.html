@@ -8,7 +8,9 @@
     <div class="photos-grid">
         @for (photo of photos; track photo.id) {
         <div class="photo-card">
-            <img [src]="photo.thumbnailUrl" [alt]="photo.title" class="thumbnail" />
+            <div class="thumb-wrapper">
+                <img [src]="photo.thumbnailUrl" [alt]="photo.title" class="thumbnail" />
+            </div>
             <p class="photo-title">{{ photo.title }}</p>
         </div>
         }

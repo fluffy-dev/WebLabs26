@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shop - Products</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #1e293b;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-align: center;
+        }
+        .category-section {
+            margin-bottom: 3rem;
+        }
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .product-name {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin: 0 0 0.5rem 0;
+        }
+        .product-price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .product-desc {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .badge-active {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+        .badge-inactive {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Online Shop Catalogue</h1>
+        
+        {% for category in categories %}
+        <div class="category-section">
+            <h2 class="category-title">{{ category.name }}</h2>
+            <div class="grid">
+                {% for product in category.products.all %}
+                <div class="card">
+                    <h3 class="product-name">{{ product.name }}</h3>
+                    <div class="product-price">${{ product.price }}</div>
+                    <p class="product-desc">{{ product.description }}</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 0.875rem;">Stock: {{ product.count }}</span>
+                        {% if product.is_active %}
+                        <span class="badge badge-active">Available</span>
+                        {% else %}
+                        <span class="badge badge-inactive">Out of Stock</span>
+                        {% endif %}
+                    </div>
+                </div>
+                {% empty %}
+                <p>No products in this category.</p>
+                {% endfor %}
+            </div>
+        </div>
+        {% empty %}
+        <p>No categories found.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

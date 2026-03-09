@@ -1,0 +1,11 @@
+services:
+  shop-back:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: django-shop-back
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./shop-back:/app
+    restart: unless-stopped

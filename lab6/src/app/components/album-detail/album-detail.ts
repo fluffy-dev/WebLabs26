@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+=import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +15,7 @@ export class AlbumDetail implements OnInit {
   album: Album | null = null;
   loading: boolean = true;
   newTitle: string = '';
+  saveMessage: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -35,13 +36,22 @@ export class AlbumDetail implements OnInit {
     }
   }
 
+  onTitleInput(event: Event): void {
+    this.newTitle = (event.target as HTMLInputElement).value;
+  }
+
   saveTitle(): void {
     if (this.album && this.newTitle) {
       const updatedAlbum = { ...this.album, title: this.newTitle };
       this.albumService.updateAlbum(updatedAlbum).subscribe((data) => {
         if (this.album) {
           this.album.title = this.newTitle;
+          this.saveMessage = 'Title saved successfully!';
           this.cdr.detectChanges();
+          setTimeout(() => {
+            this.saveMessage = '';
+            this.cdr.detectChanges();
+          }, 3000);
         }
       });
     }
